@@ -1,7 +1,7 @@
 {
-  "name": "toy-mocha-template-cl",
+  "name": "toyjs-fibonnacci",
   "version": "1.0.0",
-  "description": "Toy Problems with Mocha/Chai tests",
+  "description": "Toy problem:  Create a Fibonacci Sequence, ala. https://www.mathsisfun.com/numbers/fibonacci-sequence.html",
   "main": "toy.js",
   "scripts": {
     "test": " ./node_modules/mocha/bin/mocha"
