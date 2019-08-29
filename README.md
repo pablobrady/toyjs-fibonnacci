@@ -1,33 +1,16 @@
-# JS Toy Problem w/ Mocha
+# Fibonacci Sequence
+### JS Toy Problem (w/ Mocha testing)
+---
+### CODE TESTING:
 
---
-### MOCHA INSTALLATION
-Install as a development dependency for your project:
+```npm test``` 
 
-$ npm install --save-dev mocha
+or
 
-(As of Mocha v6.0.0, Mocha requires Node.js v6.0.0 or newer.)
-
-https://mochajs.org/#installation
-
-
---
-
-#### Install Insertion Library (Chai in this case)
-npm i --save-dev chai
+```mocha ./node_modules/mocha/bin/mocha```
 
 ---
-#### Start COMMAND LINE Testing / Problem Solving
-```npm test```
 
----
-##### NPM COMMANDS:
-
-```npm test```
-
-```mocha``` (or './node_modules/mocha/bin/mocha')
-
----
 #### REFERENCE:
 - https://www.sitepoint.com/unit-test-javascript-mocha-chai/
 
