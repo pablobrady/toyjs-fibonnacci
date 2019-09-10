@@ -4,33 +4,53 @@ module.exports = function() {
 
   // Convert arguments object to an array
   var args = Array.prototype.slice.call(arguments);
+  console.log("args = " + args)
+  var fibCache = {}
+  var fibOutputArray = [];
 
-  // // Throw error if arguments contain non-finite number values
-  // if (!args.every(Number.isFinite)) {
-  //   throw new TypeError('sum() expects only numbers.')
-  // }
+  const fib = function(n) {
+    if( n>=2 && fibCache[n] ) { return fibCache[n] }
 
-  // Return the solution output
-  var solution = function (input) {
-    const MAX_IDX = input;
-    var outputArray = []; 
+    if(n===0) {
+      if( fibCache[n] ) { return fibCache[n] }
+      fibCache[n] = 0
+      return 0
 
-    console.log("Number of items requested = " + MAX_IDX)
-
-    var fibProcess = function(tempArray, idx) {
-      if(idx==0) { return 0; }
-      if(idx==1 || idx==2) { return 1; }
-      return tempArray[idx - 2] + tempArray[idx - 1]
+    } else if( n===1 || n===2 ) {
+      if( fibCache[n] ) { return fibCache[n] }
+      fibCache[n] = 1
+      return 1
     }
+    
+    // Optimized to lookup previous values in an object.
+    if( fibCache[n] ) { return fibCache[n] }/**/
+    console.log(`Fib(${n}) calculating...`);
+    
+    let m = fib(n-1) + fib(n-2)
+    fibCache[n] = m;
 
-    var outputArray = [];
-    for(index=0; index<MAX_IDX; index++) {
-      outputArray[index] = fibProcess(outputArray, index)
-      console.log(index + " " + outputArray[index])
+    return m
+
+  };
+
+  const fibber = (x) => {
+    for(var i=0; i<x; i++){
+      console.log(`${i}: ${fib(i)}`);
     }
-
-    return outputArray
   }
 
-  return solution(args)
+  const main = (args) => {
+    fibber(args)
+
+    for(let [key, value] of Object.entries(fibCache) ) {
+      console.log(`>>> ${key}: ${value}`);
+      fibOutputArray[key] = Number(value);
+    }
+
+    console.log("fibOutputArray = " + fibOutputArray + "; Length = " + fibOutputArray.length)
+
+    return fibOutputArray;
+  }
+
+  return main(args)
 }

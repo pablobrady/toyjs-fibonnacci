@@ -21,7 +21,8 @@ describe('Answer Key Validation', function() {
 
 describe('Computed Answer Validation', function() {
   var outputArray = solved(20);
-  it('outputArray is 20 elements long', function() {
+  console.log("solved(20) = " + outputArray);
+  it('outputArray is 20 elements long ', function() {
     assert.equal(outputArray.length, 20);
   });
   it('outputArray contains all the correct elements', function() {
