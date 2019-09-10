@@ -25,8 +25,8 @@ describe('Computed Answer Validation', function() {
     assert.equal(outputArray.length, 20);
   });
   it('outputArray contains all the correct elements', function() {
-    outputArray.indexOf(0).should.equal(0);
-    outputArray.indexOf(5).should.equal(5);
-    outputArray.indexOf(20).should.equal(4181);
+    assert.equal(outputArray[0], 0);
+    assert.equal(outputArray[5], 5);
+    assert.equal(outputArray[19], 4181);
   });
 });
